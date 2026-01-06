@@ -1,12 +1,19 @@
 import './WeatherForcast.css';
+import WeatherIcon from './WeatherIcon';
+import WeatherData from './WeatherData';
 
 const WeatherForcastListItem = ({ forcast }) => {
     return (
-        <div>
-            <h2>{forcast.day}</h2>
-            <img src={forcast.img} alt={forcast.alt} />
-            <p><span>conditions: </span>{forcast.conditions}</p>
-            <p><span>time: </span>{forcast.time}</p>
+        <div className='weather-item'>
+            <WeatherData
+                day={forcast.day}
+                conditions={forcast.conditions}
+                time={forcast.time}
+            />
+            <WeatherIcon 
+            img={forcast.img}
+            alt={forcast.imgAlt}
+            />
         </div>
     );
 };
